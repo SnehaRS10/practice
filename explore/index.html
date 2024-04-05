@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="black">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif; /* Specify a fallback font */
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px; /* Add padding for content */
+      color: white; /* Set text color */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Let's Explore!!</h1>
+    <br />
+    <button onclick="window.location.href = 'counter.html';">Counter</button>
+    <br />
+    <br />
+    <button onclick="window.location.href = 'game.html';">Game</button>
+    <br /><br />
+    <button onclick="window.location.href = 'extension.html';">
+      Chrome Extension
+    </button>
+  </div>
+  <script src="main.js"></script>
+  <script>
+    if ("Notification" in window) {
+      Notification.requestPermission().then(function (result) {
+        if (result === "granted") {
+          console.log("Notification permission granted");
+        } else {
+          console.warn("Notification permission denied");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
